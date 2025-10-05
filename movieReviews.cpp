@@ -19,14 +19,28 @@ void display(Node *);
 
 int main(){
     //ask user whether they want new nodes to be added at head or tail
+    cout << "Which linked list method should we use?" << endl;
+    cout << "\t[1] New nodes are added at the head of the linked list" << endl;
+    cout << "\t[2] New nodes are added at the tail of the linked list" << endl;
+    cout << "\tChoice: ";
+    int choice;
+    cin >> choice;
 
-    //basic testing of display() & head() & tail()
+    while (choice != 1 && choice != 2){
+        cout << "Error. Please input 1 or 2 to select an option." << endl;
+        cout << "\tChoice: ";
+        cin >> choice;
+    }
+
+    /*//basic testing of display() & head() & tail()
     Node *test = nullptr;
     head(test, 4.3, "oscar");
     tail(test, 2.5, "no nominations");
     head(test, 3.9, "lead actor phenomenal");
     tail(test, 4.8, "oscar winner");
-    display(test);
+    display(test); */
+
+
 }
 
 void head(Node *&head, double r, string c){
@@ -65,7 +79,7 @@ void display(Node *head){
         int count = 1;
         Node *temp = head;
         while (temp){
-            cout << "	> Review #" << count++ << ": " << temp->rating << ": " << temp->comment << endl;
+            cout << "\t> Review #" << count++ << ": " << temp->rating << ": " << temp->comment << endl;
             temp = temp->next;
         }
     cout << endl;
