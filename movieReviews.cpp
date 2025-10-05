@@ -99,12 +99,15 @@ void display(Node *head){
     if (!head)
         cout << "Empty list.\n" << endl;
     else{
+        double total = 0;
         int count = 1;
         Node *temp = head;
         while (temp){
             cout << "\t> Review #" << count++ << ": " << temp->rating << ": " << temp->comment << endl;
+            total += temp->rating;
             temp = temp->next;
         }
+        cout << "\t> Average rating: " << total/(count-1);
     cout << endl;
     }
 
