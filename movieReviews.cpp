@@ -32,8 +32,8 @@ int main(){
         cin >> method;
     }
     
-    Node *head = nullptr;
-    int r;
+    Node *hd = nullptr;
+    double r;
     string c;
     char choice;
 
@@ -43,15 +43,15 @@ int main(){
         cout << "Enter review comments: ";
         cin >> c;
         if (method == 1)
-            head(head, r, c);
+            head(hd, r, c);
         if (method == 2)
-            tail(head, r, c);
-        cout << " Enter another review? Y/N: ";
+            tail(hd, r, c);
+        cout << "Enter another review? Y/N: ";
         cin >> choice;
     }while (choice == 'y' || choice == 'Y');
 
-    cout >> "Outputting all reviews:" << endl;
-    display(head);
+    cout << "Outputting all reviews:" << endl;
+    display(hd);
 
 
     /*//basic testing of display() & head() & tail()
