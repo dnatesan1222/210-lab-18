@@ -23,14 +23,36 @@ int main(){
     cout << "\t[1] New nodes are added at the head of the linked list" << endl;
     cout << "\t[2] New nodes are added at the tail of the linked list" << endl;
     cout << "\tChoice: ";
-    int choice;
-    cin >> choice;
+    int method;
+    cin >> method;
 
-    while (choice != 1 && choice != 2){
+    while (method != 1 && method != 2){
         cout << "Error. Please input 1 or 2 to select an option." << endl;
         cout << "\tChoice: ";
-        cin >> choice;
+        cin >> method;
     }
+    
+    Node *head = nullptr;
+    int r;
+    string c;
+    char choice;
+
+    do{
+        cout << "Enter review rating 0-5: ";
+        cin >> r;
+        cout << "Enter review comments: ";
+        cin >> c;
+        if (method == 1)
+            head(head, r, c);
+        if (method == 2)
+            tail(head, r, c);
+        cout << " Enter another review? Y/N: ";
+        cin >> choice;
+    }while (choice == 'y' || choice == 'Y');
+
+    cout >> "Outputting all reviews:" << endl;
+    display(head);
+
 
     /*//basic testing of display() & head() & tail()
     Node *test = nullptr;
