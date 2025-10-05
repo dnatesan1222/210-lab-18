@@ -9,22 +9,24 @@ struct Node {
     double rating;
     string comment;
     Node* next;
-}
+};
 
 //function prototypes
 void head(Node *&head, double r, string c);
 void tail(Node *&head, double r, string c);
-void display(Node *)
+void display(Node *);
 
 
 int main(){
     //ask user whether they want new nodes to be added at head or tail
 
-    //test display()
-    Node test = new Node;
-    head(test, 4.3, "oscar");`
-
-    //test head() & tail()
+    //basic testing of display() & head() & tail()
+    Node *test = nullptr;
+    head(test, 4.3, "oscar");
+    tail(test, 2.5, "no nominations");
+    head(test, 3.9, "lead actor phenomenal");
+    tail(test, 4.8, "oscar winner");
+    display(test);
 }
 
 void head(Node *&head, double r, string c){
@@ -50,9 +52,9 @@ void tail(Node *&head, double r, string c){
         head = tail;
     else{
         Node *temp = head;
-        while (temp)
+        while (temp->next)
             temp = temp->next;
-        temp = tail;
+	temp->next = tail;
     }
 }
 
