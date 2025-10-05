@@ -21,6 +21,11 @@ void display(Node *)
 int main(){
     //ask user whether they want new nodes to be added at head or tail
 
+    //test display()
+    Node test = new Node;
+    head(test, 4.3, "oscar");`
+
+    //test head() & tail()
 }
 
 void head(Node *&head, double r, string c){
@@ -48,9 +53,21 @@ void tail(Node *&head, double r, string c){
         Node *temp = head;
         while (temp)
             temp = temp->next;
-        
+        temp = tail;
+    }
+}
+
+void display(Node *head){
+    if (!head)
+        cout << "Empty list.\n" << endl;
+    else{
+        int count = 1;
+        Node *temp = head;
+        while (temp){
+            cout << "	> Review #" << count++ << ": " << temp->rating << ": " << temp->comment << endl;
+            temp = temp->next;
+        }
+    cout << endl;
     }
 
 }
-
-
