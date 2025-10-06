@@ -13,8 +13,17 @@ struct Node {
 };
 
 //function prototypes
+
+//head() adds nodes to the beginning of an LL of nodes
+//arguments: takes the address of a head node and values to store for a new node
 void head(Node *&head, double r, string c);
+
+//tail() adds nodes to the end of an LL of nodes
+//arguments: takes the address of a head node and values to store for a new node
 void tail(Node *&head, double r, string c);
+
+//display() outputs the values save in the LL of nodes
+//arguments: takes the address of the head node to know what LL to traverse
 void display(Node *);
 
 
